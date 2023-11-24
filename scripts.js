@@ -2,13 +2,14 @@
 
 const key ="93e9bf7f3b8f02bbe505100778e485cf"
 
-function ColocarDadosNaTela(dados) {
-    console.log(dados)
-    document.querySelector(".tempo").innerHTML= "Tempo em " + dados.name
-    document.querySelector(".temp").innerHTML= Math.floor(dados.main.temp) + "C"
-    document.querySelector(".previsao").innerHTML= dados.weather[0].description
-    document.querySelector(".umidade").innerHTML= dados.main.humidity + "%"
-    document.querySelector(".img-previsao").src = `https://openweathermap.org/img/wn/${dados.weather[0].icon}.png`
+function ColocarDadosNaTela(data) {
+    console.log(data)
+    document.querySelector(".tempo").innerHTML= "Tempo em " + data.name
+    document.querySelector(".temp").innerHTML= Math.floor(data.main.temp) + "°C"
+
+    document.querySelector(".previsao").innerHTML= data.weather[0].description
+    document.querySelector(".umidade").innerHTML= data.main.humidity + "%"
+    document.querySelector(".img-previsao").src = `https://openweathermap.org/img/wn/${data.weather[0].icon}.png`
 }
 
 async function buscarCidade(cidade){
